@@ -12,6 +12,9 @@ hero:
     - theme: alt
       text: 关于我
       link: /about/
+    - theme: brand
+      text: NeedHub 编程导航
+      link: /needhub-nav/
 
 features:
   - icon: ☕
@@ -26,4 +29,9 @@ features:
     title: 框架中间件
     details: Spring、MyBatis、SpringCloud、Kafka、RocketMQ、ES、Netty——掌握主流框架的核心原理。
     link: /blog/?category=middleware
+  - icon: 🧭
+    title: NeedHub 编程导航
+    details: 汇总首页、学习中心、编程导航资源，覆盖 AI 学习、直播录播、面试课程和开发教程入口。
+    link: /needhub-nav/
 ---
+
