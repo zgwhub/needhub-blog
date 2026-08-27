@@ -189,9 +189,10 @@ html {
   border-radius: var(--nh-radius-sm);
 }
 
-/* ---------- NeedHub Mars-style programming navigation ---------- */
+
+/* ---------- NeedHub blue-white programming navigation ---------- */
 body:has(.nh-mars-shell) {
-  background: #050505;
+  background: #f6f8fc;
 }
 
 body:has(.nh-mars-shell) .VPNav,
@@ -219,24 +220,24 @@ body:has(.nh-mars-shell) .container {
 }
 
 .nh-mars-shell {
-  --mars-bg: #050505;
-  --mars-bg-2: #090909;
-  --mars-panel: #171719;
-  --mars-panel-2: #222229;
-  --mars-panel-3: #2a271d;
-  --mars-line: rgba(212, 168, 83, 0.18);
-  --mars-border: #2d2d32;
-  --mars-border-strong: #3c3628;
-  --mars-gold: #d4a853;
-  --mars-gold-2: #f4c86b;
-  --mars-text: #f4f4f5;
-  --mars-muted: #a5a5ab;
-  --mars-dim: #73737a;
+  --mars-bg: #f6f8fc;
+  --mars-bg-2: #eef4ff;
+  --mars-panel: #ffffff;
+  --mars-panel-2: #f8fbff;
+  --mars-panel-3: #eaf2ff;
+  --mars-line: #d8e6ff;
+  --mars-border: #dbe7f6;
+  --mars-border-strong: #b8d3ff;
+  --mars-gold: #2563eb;
+  --mars-gold-2: #1d4ed8;
+  --mars-text: #0f172a;
+  --mars-muted: #475569;
+  --mars-dim: #64748b;
   min-height: 100vh;
   color: var(--mars-text);
   background:
-    radial-gradient(circle at 20% 0%, rgba(212, 168, 83, 0.08), transparent 30%),
-    linear-gradient(180deg, #050505 0%, #090909 55%, #050505 100%);
+    radial-gradient(circle at 16% 0%, rgba(37, 99, 235, 0.12), transparent 30%),
+    linear-gradient(180deg, #f6f8fc 0%, #ffffff 45%, #eef4ff 100%);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -257,33 +258,43 @@ body:has(.nh-mars-shell) .container {
   z-index: 50;
   display: flex;
   align-items: center;
-  gap: 28px;
-  min-height: 86px;
-  padding: 0 15vw;
+  gap: 24px;
+  min-height: 72px;
+  padding: 0 10vw;
   border-bottom: 1px solid var(--mars-line);
-  background: rgba(6, 6, 6, 0.94);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(18px);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
 }
 
 .nh-mars-logo {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--mars-gold-2) !important;
-  font-size: 22px;
-  font-weight: 800;
+  color: #0f172a !important;
+  font-size: 20px;
+  font-weight: 850;
   white-space: nowrap;
 }
 
 .nh-mars-planet {
-  font-size: 29px;
-  filter: drop-shadow(0 0 16px rgba(212, 168, 83, 0.35));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  font-size: 18px;
+  font-weight: 900;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.24);
 }
 
 .nh-mars-nav {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   flex: 1;
   min-width: 0;
 }
@@ -295,18 +306,18 @@ body:has(.nh-mars-shell) .container {
   padding: 0 12px;
   border: 1px solid transparent;
   border-radius: 10px;
-  color: #d8d8dc !important;
+  color: #334155 !important;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   white-space: nowrap;
   transition: 0.18s ease;
 }
 
 .nh-mars-nav-link:hover,
 .nh-mars-nav-link.active {
-  color: var(--mars-gold-2) !important;
-  background: rgba(212, 168, 83, 0.14);
-  border-color: rgba(212, 168, 83, 0.18);
+  color: #1d4ed8 !important;
+  background: #eaf2ff;
+  border-color: #bfdbfe;
 }
 
 .nh-mars-actions {
@@ -316,15 +327,15 @@ body:has(.nh-mars-shell) .container {
 }
 
 .nh-mars-search-pill {
-  width: 250px;
+  width: 246px;
   height: 38px;
   display: flex;
   align-items: center;
-  padding: 0 18px;
-  border: 1px solid var(--mars-border-strong);
+  padding: 0 16px;
+  border: 1px solid #dbe7f6;
   border-radius: 999px;
-  color: #85858c;
-  background: #101010;
+  color: #64748b;
+  background: #f8fbff;
   font-size: 13px;
 }
 
@@ -336,30 +347,32 @@ body:has(.nh-mars-shell) .container {
   justify-content: center;
   height: 38px;
   border-radius: 999px;
-  color: var(--mars-gold-2) !important;
+  color: #1d4ed8 !important;
   font-weight: 800;
   font-size: 14px;
 }
 
 .nh-mars-vip {
   padding: 0 16px;
-  background: #18130b;
+  background: #eaf2ff;
 }
 
 .nh-mars-theme {
   width: 38px;
-  border: 1px solid var(--mars-border-strong);
+  border: 1px solid #dbe7f6;
+  background: #ffffff;
 }
 
 .nh-mars-login {
-  padding: 0 22px;
-  border: 2px solid var(--mars-gold);
+  padding: 0 20px;
+  border: 1px solid #2563eb;
+  background: #ffffff;
 }
 
 .nh-mars-page {
   width: min(1240px, calc(100vw - 48px));
   margin: 0 auto;
-  padding: 34px 0 80px;
+  padding: 30px 0 80px;
 }
 
 .nh-hero-grid,
@@ -368,8 +381,8 @@ body:has(.nh-mars-shell) .container {
 .nh-code-board,
 .nh-code-sidebar {
   border: 1px solid var(--mars-border);
-  background: rgba(23, 23, 25, 0.92);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 24px 70px rgba(37, 99, 235, 0.08);
 }
 
 .nh-hero-grid {
@@ -377,7 +390,7 @@ body:has(.nh-mars-shell) .container {
   grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
   gap: 28px;
   padding: 46px;
-  border-radius: 16px;
+  border-radius: 20px;
 }
 
 .nh-kicker {
@@ -385,9 +398,9 @@ body:has(.nh-mars-shell) .container {
   align-items: center;
   gap: 8px;
   margin-bottom: 14px;
-  color: var(--mars-gold-2);
+  color: #2563eb;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 850;
 }
 
 .nh-hero-copy h1,
@@ -403,7 +416,7 @@ body:has(.nh-mars-shell) .container {
 .nh-page-heading p {
   max-width: 720px;
   margin: 20px 0 0;
-  color: #c8c8cd;
+  color: #475569;
   font-size: 17px;
   line-height: 1.8;
 }
@@ -422,47 +435,47 @@ body:has(.nh-mars-shell) .container {
   min-height: 42px;
   padding: 0 22px;
   border-radius: 12px;
-  font-weight: 800;
+  font-weight: 850;
 }
 
 .nh-gold-button {
-  color: #12100a !important;
-  background: linear-gradient(180deg, #f2c765 0%, #d4a853 100%);
-  box-shadow: 0 14px 38px rgba(212, 168, 83, 0.22);
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+  box-shadow: 0 14px 34px rgba(37, 99, 235, 0.22);
 }
 
 .nh-dark-button {
-  color: var(--mars-gold-2) !important;
-  border: 1px solid var(--mars-border-strong);
-  background: #111;
+  color: #1d4ed8 !important;
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
 }
 
 .nh-code-card {
   overflow: hidden;
-  border: 1px solid var(--mars-border-strong);
-  border-radius: 14px;
-  background: #0d0d0f;
+  border: 1px solid #dbe7f6;
+  border-radius: 16px;
+  background: #f8fbff;
 }
 
 .nh-code-dots {
   display: flex;
   gap: 7px;
   padding: 14px 16px;
-  border-bottom: 1px solid #282828;
+  border-bottom: 1px solid #dbe7f6;
 }
 
 .nh-code-dots span {
   width: 11px;
   height: 11px;
   border-radius: 999px;
-  background: var(--mars-gold);
-  opacity: 0.8;
+  background: #60a5fa;
+  opacity: 0.9;
 }
 
 .nh-code-card pre {
   margin: 0;
   padding: 24px;
-  color: #e6d3aa;
+  color: #1e3a8a;
   white-space: pre-wrap;
   line-height: 1.8;
   font-size: 14px;
@@ -483,8 +496,8 @@ body:has(.nh-mars-shell) .container {
 .nh-tutorial-card,
 .nh-mini-category {
   border: 1px solid var(--mars-border);
-  background: #171719;
-  transition: border-color 0.18s ease, transform 0.18s ease, background 0.18s ease;
+  background: #ffffff;
+  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
 
 .nh-stat-card:hover,
@@ -494,18 +507,19 @@ body:has(.nh-mars-shell) .container {
 .nh-media-card:hover,
 .nh-tutorial-card:hover,
 .nh-mini-category:hover {
-  border-color: rgba(212, 168, 83, 0.5);
+  border-color: #93c5fd;
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.12);
   transform: translateY(-2px);
 }
 
 .nh-stat-card {
   padding: 22px;
-  border-radius: 14px;
+  border-radius: 16px;
 }
 
 .nh-stat-card strong {
   display: block;
-  color: var(--mars-gold-2);
+  color: #2563eb;
   font-size: 32px;
   line-height: 1;
 }
@@ -527,7 +541,7 @@ body:has(.nh-mars-shell) .container {
 .nh-page-heading {
   margin-bottom: 18px;
   padding: 28px;
-  border-radius: 16px;
+  border-radius: 20px;
 }
 
 .nh-section-title {
@@ -536,16 +550,16 @@ body:has(.nh-mars-shell) .container {
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 20px;
-  color: var(--mars-gold-2);
+  color: #1d4ed8;
   font-weight: 900;
   font-size: 18px;
 }
 
 .nh-section-title a,
 .nh-section-title small {
-  color: var(--mars-gold-2) !important;
+  color: #2563eb !important;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 850;
 }
 
 .nh-mini-category-grid,
@@ -561,7 +575,7 @@ body:has(.nh-mars-shell) .container {
 .nh-resource-card {
   min-height: 104px;
   padding: 18px;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .nh-mini-category strong,
@@ -596,17 +610,17 @@ body:has(.nh-mars-shell) .container {
   gap: 10px;
   align-items: center;
   padding: 11px 12px;
-  border-radius: 10px;
-  background: #111113;
+  border-radius: 12px;
+  background: #f8fbff;
 }
 
 .nh-rank-list b {
-  color: var(--mars-gold-2);
+  color: #2563eb;
 }
 
 .nh-rank-list span {
   overflow: hidden;
-  color: #d9d9dd;
+  color: #0f172a;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -629,7 +643,7 @@ body:has(.nh-mars-shell) .container {
 .nh-media-card,
 .nh-order-card {
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .nh-media-card img {
@@ -637,7 +651,7 @@ body:has(.nh-mars-shell) .container {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  background: #0c0c0c;
+  background: #eef4ff;
 }
 
 .nh-card-body,
@@ -661,10 +675,10 @@ body:has(.nh-mars-shell) .container {
   min-height: 24px;
   padding: 0 9px;
   border-radius: 999px;
-  color: var(--mars-gold-2);
-  background: rgba(212, 168, 83, 0.13);
+  color: #1d4ed8;
+  background: #eaf2ff;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 850;
 }
 
 .nh-media-card h3,
@@ -698,7 +712,7 @@ body:has(.nh-mars-shell) .container {
 }
 
 .nh-order-card footer strong {
-  color: var(--mars-gold-2);
+  color: #2563eb;
   font-size: 18px;
 }
 
@@ -719,23 +733,23 @@ body:has(.nh-mars-shell) .container {
 .nh-filter-row button {
   height: 34px;
   padding: 0 14px;
-  border: 1px solid var(--mars-border);
+  border: 1px solid #dbe7f6;
   border-radius: 999px;
-  color: #d8d8dc;
-  background: #111113;
+  color: #334155;
+  background: #ffffff;
   cursor: pointer;
 }
 
 .nh-filter-row button.active,
 .nh-filter-row button:hover {
-  color: #14100a;
-  border-color: var(--mars-gold);
-  background: linear-gradient(180deg, #f2c765 0%, #d4a853 100%);
+  color: #ffffff;
+  border-color: #2563eb;
+  background: #2563eb;
 }
 
 .nh-code-page {
   display: grid;
-  grid-template-columns: 178px minmax(0, 1fr);
+  grid-template-columns: 190px minmax(0, 1fr);
   gap: 18px;
   width: min(1240px, calc(100vw - 48px));
   align-items: start;
@@ -743,9 +757,9 @@ body:has(.nh-mars-shell) .container {
 
 .nh-code-sidebar {
   position: sticky;
-  top: 106px;
+  top: 92px;
   overflow: hidden;
-  border-radius: 9px;
+  border-radius: 14px;
 }
 
 .nh-code-all,
@@ -754,7 +768,7 @@ body:has(.nh-mars-shell) .container {
   min-height: 48px;
   padding: 0 14px;
   border: 0;
-  color: #f2f2f3;
+  color: #334155;
   background: transparent;
   font-weight: 750;
   text-align: left;
@@ -762,8 +776,8 @@ body:has(.nh-mars-shell) .container {
 }
 
 .nh-code-all {
-  color: #12100a;
-  background: linear-gradient(180deg, #e9bd5c, #c79b42);
+  color: #ffffff;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
 }
 
 .nh-code-side-link {
@@ -775,13 +789,13 @@ body:has(.nh-mars-shell) .container {
 
 .nh-code-side-link:hover,
 .nh-code-side-link.active {
-  color: var(--mars-gold-2);
-  border-left-color: var(--mars-gold);
-  background: rgba(212, 168, 83, 0.12);
+  color: #1d4ed8;
+  border-left-color: #2563eb;
+  background: #eaf2ff;
 }
 
 .nh-code-side-link span {
-  color: var(--mars-dim);
+  color: #94a3b8;
   font-size: 11px;
 }
 
@@ -798,32 +812,33 @@ body:has(.nh-mars-shell) .container {
 
 .nh-code-search input {
   flex: 1;
-  height: 43px;
-  border: 1px solid var(--mars-border);
-  border-radius: 8px;
+  height: 44px;
+  border: 1px solid #dbe7f6;
+  border-radius: 12px;
   padding: 0 14px;
   color: var(--mars-text);
-  background: #151517;
+  background: #ffffff;
   outline: none;
 }
 
 .nh-code-search input:focus {
-  border-color: rgba(212, 168, 83, 0.55);
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
 }
 
 .nh-code-search span {
-  color: var(--mars-gold-2);
+  color: #2563eb;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 850;
 }
 
 .nh-code-board {
   padding: 16px;
-  border-radius: 12px;
+  border-radius: 18px;
 }
 
 .nh-code-section {
-  scroll-margin-top: 110px;
+  scroll-margin-top: 96px;
   margin-bottom: 16px;
   padding: 10px 0 14px;
   border-bottom: 1px solid var(--mars-border);
@@ -836,7 +851,7 @@ body:has(.nh-mars-shell) .container {
 
 .nh-code-section h2 {
   margin: 0 0 16px;
-  color: var(--mars-gold-2);
+  color: #1d4ed8;
   font-size: 18px;
   font-weight: 900;
 }
@@ -852,12 +867,12 @@ body:has(.nh-mars-shell) .container {
   gap: 13px;
   min-height: 92px;
   padding: 14px;
-  border-radius: 9px;
+  border-radius: 14px;
 }
 
 .nh-tutorial-card:first-child {
-  background: #202025;
-  border-color: rgba(212, 168, 83, 0.45);
+  background: #f8fbff;
+  border-color: #93c5fd;
 }
 
 .nh-tutorial-icon {
@@ -868,10 +883,10 @@ body:has(.nh-mars-shell) .container {
   width: 34px;
   height: 34px;
   margin-top: 28px;
-  border-radius: 8px;
-  color: var(--mars-gold-2);
-  background: #0b0b0c;
-  border: 1px solid #303035;
+  border-radius: 10px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+  border: 1px solid #93c5fd;
   font-size: 12px;
   font-weight: 900;
 }
@@ -883,7 +898,7 @@ body:has(.nh-mars-shell) .container {
 .nh-tutorial-copy strong {
   display: block;
   margin-bottom: 8px;
-  color: var(--mars-gold-2);
+  color: #1d4ed8;
   font-size: 15px;
   line-height: 1.35;
 }

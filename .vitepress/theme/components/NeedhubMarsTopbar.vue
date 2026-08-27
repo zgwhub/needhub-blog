@@ -6,7 +6,7 @@ const props = defineProps<{
 }>()
 
 const links = [
-  { key: 'site', text: '首页', href: withBase('/') },
+  { key: 'overview', text: '导航总览', href: withBase('/needhub-nav/') },
   { key: 'learn', text: '学习中心', href: withBase('/needhub-nav/learn') },
   { key: 'project', text: '项目实战', href: withBase('/needhub-nav/#orders') },
   { key: 'code', text: '编程导航', href: withBase('/needhub-nav/code-nav') },
@@ -17,8 +17,8 @@ const links = [
 
 <template>
   <header class="nh-mars-topbar">
-    <a class="nh-mars-logo" :href="withBase('/needhub-nav/')" aria-label="NeedHub 编程导航首页">
-      <span class="nh-mars-planet">🪐</span>
+    <a class="nh-mars-logo" :href="withBase('/needhub-nav/')" aria-label="NeedHub 编程导航">
+      <span class="nh-mars-planet">N</span>
       <span>NeedHub 编程导航</span>
     </a>
 
@@ -27,15 +27,15 @@ const links = [
         v-for="link in links"
         :key="link.key"
         :href="link.href"
-        :class="['nh-mars-nav-link', { active: (props.active === 'home' && link.key === 'site') || (props.active === 'learn' && link.key === 'learn') || (props.active === 'code' && link.key === 'code') }]"
+        :class="['nh-mars-nav-link', { active: (props.active === 'home' && link.key === 'overview') || (props.active === 'learn' && link.key === 'learn') || (props.active === 'code' && link.key === 'code') }]"
       >
         {{ link.text }}
       </a>
     </nav>
 
     <div class="nh-mars-actions">
-      <div class="nh-mars-search-pill">⌕ 搜索编程导航教程...</div>
-      <span class="nh-mars-vip">VIP 会员</span>
+      <div class="nh-mars-search-pill">⌕ 搜索教程 / 课程 / 项目</div>
+      <span class="nh-mars-vip">会员</span>
       <span class="nh-mars-theme">☼</span>
       <a class="nh-mars-login" :href="withBase('/about/')">登录</a>
     </div>

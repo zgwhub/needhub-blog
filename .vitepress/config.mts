@@ -100,7 +100,7 @@ export default defineConfig({
         {
           text: 'NeedHub 编程导航',
           items: [
-            { text: '首页', link: '/needhub-nav/' },
+            { text: '导航总览', link: '/needhub-nav/' },
             { text: '学习中心', link: '/needhub-nav/learn' },
             { text: '编程导航', link: '/needhub-nav/code-nav' }
           ]
