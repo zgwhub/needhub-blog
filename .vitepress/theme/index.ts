@@ -5,8 +5,7 @@ import './styles/vars.css'
 import BlogList from './components/BlogList.vue'
 import CryptoLab from './components/CryptoLab.vue'
 import NeedhubCodeNav from './components/NeedhubCodeNav.vue'
-import NeedhubNavLearn from './components/NeedhubNavLearn.vue'
-import NeedhubNavHome from './components/NeedhubNavHome.vue'
+import NeedhubCodeNavDetail from './components/NeedhubCodeNavDetail.vue'
 
 export default {
   extends: DefaultTheme,
@@ -14,7 +13,6 @@ export default {
     app.component('BlogList', BlogList)
     app.component('CryptoLab', CryptoLab)
     app.component('NeedhubCodeNav', NeedhubCodeNav)
-    app.component('NeedhubNavLearn', NeedhubNavLearn)
-    app.component('NeedhubNavHome', NeedhubNavHome)
+    app.component('NeedhubCodeNavDetail', NeedhubCodeNavDetail)
   }
 }

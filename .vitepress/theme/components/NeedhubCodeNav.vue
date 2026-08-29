@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import NeedhubMarsTopbar from './NeedhubMarsTopbar.vue'
+import { withBase } from 'vitepress'
 import { needhubNavData } from '../data/needhubNavData'
 
 const query = ref('')
@@ -9,6 +9,7 @@ const sidebarSections = computed(() => needhubNavData.sections)
 const filteredSections = computed(() => {
   const keyword = query.value.trim().toLowerCase()
   if (!keyword) return needhubNavData.sections
+
   return needhubNavData.sections
     .map((section) => ({
       ...section,
@@ -17,6 +18,7 @@ const filteredSections = computed(() => {
     .filter((section) => section.tutorials.length > 0)
 })
 const totalFiltered = computed(() => filteredSections.value.reduce((sum, section) => sum + section.tutorials.length, 0))
+const tutorialCount = computed(() => needhubNavData.sections.reduce((sum, section) => sum + section.tutorials.length, 0))
 const iconFor = (title: string) => {
   if (/AI|Agent|智能|Claude|Codex|OpenCode/i.test(title)) return 'AI'
   if (/Python|NumPy|Pandas|SciPy|Matplotlib/i.test(title)) return 'Py'
@@ -26,6 +28,7 @@ const iconFor = (title: string) => {
   if (/Docker|Kubernetes|Git|DevOps/i.test(title)) return '⚙'
   return '⌘'
 }
+const tutorialHref = (id: number) => withBase(`/code-nav/tutorial.html?id=${id}`)
 const scrollToSection = (slug: string) => {
   activeSlug.value = slug
   document.getElementById(slug)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -33,10 +36,20 @@ const scrollToSection = (slug: string) => {
 </script>
 
 <template>
-  <div class="nh-mars-shell">
-    <NeedhubMarsTopbar active="code" />
+  <div class="nh-code-nav-shell">
+    <section class="nh-code-hero">
+      <div>
+        <span class="nh-code-kicker">站内资源导航</span>
+        <h1>编程导航</h1>
+        <p>聚合 {{ needhubNavData.sections.length }} 个方向、{{ tutorialCount }} 个教程入口。点击任意教程后进入本站详情页，不再跳转到菜鸟教程页面。</p>
+      </div>
+      <div class="nh-code-hero-card">
+        <strong>{{ tutorialCount }}</strong>
+        <span>站内教程入口</span>
+      </div>
+    </section>
 
-    <main class="nh-mars-page nh-code-page">
+    <main class="nh-code-page">
       <aside class="nh-code-sidebar">
         <button class="nh-code-all" @click="scrollToSection(sidebarSections[0]?.slug || '')">☰ 全部教程</button>
         <button
@@ -63,9 +76,7 @@ const scrollToSection = (slug: string) => {
                 v-for="tutorial in section.tutorials"
                 :key="tutorial.id"
                 class="nh-tutorial-card"
-                :href="tutorial.url"
-                target="_blank"
-                rel="noreferrer"
+                :href="tutorialHref(tutorial.id)"
               >
                 <span class="nh-tutorial-icon">{{ iconFor(tutorial.title) }}</span>
                 <span class="nh-tutorial-copy">

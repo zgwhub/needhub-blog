@@ -18,7 +18,7 @@ export default defineConfig({
     // Navigation bar
     nav: [
       { text: '首页', link: '/' },
-      { text: 'NeedHub 编程导航', link: '/needhub-nav/' },
+      { text: '编程导航', link: '/code-nav/' },
       { text: '博客', link: '/blog/' },
       { text: '关于', link: '/about/' },
       { text: '加密实验室', link: '/crypto-lab' },
@@ -96,16 +96,6 @@ export default defineConfig({
 
     // Sidebar
     sidebar: {
-      '/needhub-nav/': [
-        {
-          text: 'NeedHub 编程导航',
-          items: [
-            { text: '导航总览', link: '/needhub-nav/' },
-            { text: '学习中心', link: '/needhub-nav/learn' },
-            { text: '编程导航', link: '/needhub-nav/code-nav' }
-          ]
-        }
-      ],
       '/blog/posts/': [
         {
           text: 'Java核心',
